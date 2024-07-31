@@ -4,7 +4,7 @@ defmodule Arc.Ecto.Definition do
 
     quote do
       defmodule Module.concat(unquote(definition), "Type") do
-        @behaviour Ecto.Type
+        use Ecto.Type
         def type, do: Arc.Ecto.Type.type
         def cast(value), do: Arc.Ecto.Type.cast(unquote(definition), value)
         def load(value), do: Arc.Ecto.Type.load(unquote(definition), value)
